@@ -26,13 +26,13 @@ const Home = ({ name, setName, fetchQuestions }) => {
   return (
     <div className="content">
       <div className="settings">
-        <span style={{ fontSize: 30 }}>Quiz Settings</span>
+        <span style={{ fontSize: 30, color:'blueviolet' }}>Quiz Settings</span>
         <div className="settings__select">
           {error && <ErrorMessage>Please Fill all the feilds</ErrorMessage>}
           <TextField
-            style={{ marginBottom: 25 }}
+            style={{ marginBottom: 25, backgroundColor:'white'}}
             label="Enter Your Name"
-            variant="outlined"
+            variant="filled"
             onChange={(e) => setName(e.target.value)}
           />
           <TextField
@@ -40,8 +40,8 @@ const Home = ({ name, setName, fetchQuestions }) => {
             label="Select Category"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            variant="outlined"
-            style={{ marginBottom: 30 }}
+            variant="filled"
+            style={{ marginBottom: 30, backgroundColor:'white' }}
           >
             {Categories.map((cat) => (
               <MenuItem key={cat.category} value={cat.value}>
@@ -54,8 +54,8 @@ const Home = ({ name, setName, fetchQuestions }) => {
             label="Select Difficulty"
             value={difficulty}
             onChange={(e) => setDifficulty(e.target.value)}
-            variant="outlined"
-            style={{ marginBottom: 30 }}
+            variant="filled"
+            style={{ marginBottom: 30, backgroundColor:'white' }}
           >
             <MenuItem key="Easy" value="easy">
               Easy
@@ -77,7 +77,7 @@ const Home = ({ name, setName, fetchQuestions }) => {
           </Button>
         </div>
       </div>
-      <img src="/quiz.svg" className="banner" alt="quiz app" />
+      <img src="/quiz.svg" className="banner" alt="quiz app" style={{width:'45%'}}/>
     </div>
   );
 };

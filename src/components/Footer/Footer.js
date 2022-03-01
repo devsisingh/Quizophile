@@ -3,15 +3,18 @@ const Footer = () => {
     <div
       style={{
         textAlign: "center",
-        marginBottom: 10,
+        paddingBottom: 10,
+        paddingTop:8,
+        backgroundColor:'black',
+        color:'white'
       }}
     >
-      Made with ♥ by{" "}
+      Build by{" "}
       <a
         href="https://www.youtube.com/roadsidecoder"
         style={{ cursor: "pointer" }}
       >
-        Roadside Coder
+        Team Dijkstra 🤍
       </a>
     </div>
   );

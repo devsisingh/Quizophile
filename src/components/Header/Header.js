@@ -4,8 +4,8 @@ import "./Header.css";
 const Header = () => {
   return (
     <div className="header">
-      <Link to="/" className="title">
-        Intuitive Quiz Hub
+      <Link to="/" className="title" style={{color:'white'}}>
+        Quizophile
       </Link>
       <hr className="divider" />
     </div>
