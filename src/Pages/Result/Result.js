@@ -52,14 +52,10 @@ doc.text(210,100, 'Quizophile Test Results');
 
   return (
     <div className="result">
-      {
-        score>6 && 
-        (
       <Buttons onClick={handleOpen} variant="contained"
         color="success"
         size="large"
-        style={{ alignSelf: "center", marginTop: 20 }}>View Certificate</Buttons>
-        )}
+        style={{ alignSelf: "center", marginTop: 20 }}>View Scorecard</Buttons>
 
 <Modal
   open={open}
@@ -74,11 +70,13 @@ doc.text(210,100, 'Quizophile Test Results');
     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
       SCORE OBTAINED : {score*10}/100
     </Typography>
+    {score>6 && 
+        (
     <Buttons onClick={generatePDF} variant="contained"
         color="success"
         size="large"
         style={{ alignSelf: "center", marginTop: 20 }}>Download Certificate
-        </Buttons>
+        </Buttons>)}
   </Box>
   
 </Modal>
