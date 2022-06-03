@@ -36,7 +36,17 @@ const Result = ({ name, score }) => {
 
   const generatePDF = () => {
     const doc = new jsPDF("p", "pt");
-    doc.text(20,20, `Test Results: ${name} : ${score*10}`);
+    doc.rect(20, 20, doc.internal.pageSize.width - 40, doc.internal.pageSize.height - 40, 'S');
+    doc.rect(30, 30, doc.internal.pageSize.width - 60, doc.internal.pageSize.height - 60, 'S');
+    doc.setFontSize(17);
+ 
+doc.setFillColor(55,27,88);
+doc.rect(200, 80, 200, 30, 'F');
+doc.setTextColor(247, 126, 33);
+doc.text(210,100, 'Quizophile Test Results');
+    doc.text(100,150, `${name} scored ${score*10} marks out of 100 in the quiz conducted`);
+    doc.text(100,190, `on the platform QUIZOPHILE built by TEAM Dijkstra.`);
+    doc.text(100,230, `Greetings to you and keep learning!!`);
     doc.save("certificate.pdf");
   };
 
@@ -59,10 +69,10 @@ const Result = ({ name, score }) => {
 >
   <Box sx={style}>
     <Typography id="modal-modal-title" variant="h6" component="h2">
-      {name}
+      NAME : {name}
     </Typography>
     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-      {score*10} 
+      SCORE OBTAINED : {score*10}/100
     </Typography>
     <Buttons onClick={generatePDF} variant="contained"
         color="success"
