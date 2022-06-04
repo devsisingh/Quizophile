@@ -40,17 +40,26 @@ const Result = ({ name, score }) => {
     doc.rect(30, 30, doc.internal.pageSize.width - 60, doc.internal.pageSize.height - 60, 'S');
     doc.setFontSize(30);
 
-    doc.setFillColor(241,240,192);
+    doc.setFillColor(221,221,221);
 doc.rect(30, 30, 535, 780, 'F');
 
-doc.setFillColor(0,0,0);
+doc.setFillColor(36,58,115);
 doc.rect(0, 0, 20, 840, 'F');
-doc.setFillColor(0,0,0);
+doc.setFillColor(36,58,115);
 doc.rect(575, 0, 20, 840, 'F');
-doc.setFillColor(0,0,0);
+doc.setFillColor(36,58,115);
 doc.rect(0, 0, 585, 20, 'F');
-doc.setFillColor(0,0,0);
+doc.setFillColor(36,58,115);
 doc.rect(0, 823, 600, 20, 'F');
+
+doc.setFillColor(243,36,36);
+doc.rect(20, 20, 10, 800, 'F');
+doc.setFillColor(243,36,36);
+doc.rect(565, 20, 10, 800, 'F'); //3
+doc.setFillColor(243,36,36);
+doc.rect(20, 20, 550, 10, 'F'); //2
+doc.setFillColor(243,36,36);
+doc.rect(20, 813, 555, 10, 'F'); //4
 
  
 doc.setFillColor(55,27,88);
@@ -67,12 +76,12 @@ doc.text(100,250, `NAME: ${name}`);
     doc.text(160,430, `Greetings to you and keep learning!!`);
 
     doc.setTextColor(0, 0, 0);
-    doc.text(50,500,  `Tripda Goel`);
-    doc.text(250,500, `Simranjeet Kaur`);
+    doc.text(70,500,  `Tripda Goel`);
+    doc.text(250,500, `Simran jeet Kaur`);
     doc.text(450,500, `Devsi Singh`);
-    doc.text(50,530, `(Team Coordinator)`);
-    doc.text(250,530, `(Team Coordinator)`);
-    doc.text(450,530, `(Team Leader)`);
+    doc.text(45,530, `(Team Coordinator)`);
+    doc.text(240,530, `(Team Coordinator)`);
+    doc.text(440,530, `(Team Leader)`);
 
     doc.save("certificate.pdf");
   };
@@ -97,7 +106,7 @@ doc.text(100,250, `NAME: ${name}`);
     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
       SCORE OBTAINED : {score*10}/100
     </Typography>
-    {score>0 && 
+    {score>6 && 
         (
     <Buttons onClick={generatePDF} variant="contained"
         color="success"
