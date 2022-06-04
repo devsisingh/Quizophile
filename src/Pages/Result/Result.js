@@ -38,15 +38,23 @@ const Result = ({ name, score }) => {
     const doc = new jsPDF("p", "pt");
     doc.rect(20, 20, doc.internal.pageSize.width - 40, doc.internal.pageSize.height - 40, 'S');
     doc.rect(30, 30, doc.internal.pageSize.width - 60, doc.internal.pageSize.height - 60, 'S');
-    doc.setFontSize(17);
+    doc.setFontSize(30);
+
+    doc.setFillColor(241,240,192);
+doc.rect(30, 30, 535, 780, 'F');
  
 doc.setFillColor(55,27,88);
-doc.rect(200, 80, 200, 30, 'F');
+doc.rect(130, 120, 340, 40, 'F');
 doc.setTextColor(247, 126, 33);
-doc.text(210,100, 'Quizophile Test Results');
-    doc.text(100,150, `${name} scored ${score*10} marks out of 100 in the quiz conducted`);
-    doc.text(100,190, `on the platform QUIZOPHILE built by TEAM Dijkstra.`);
-    doc.text(100,230, `Greetings to you and keep learning!!`);
+doc.text(140,150, 'Quizophile Test Results');
+doc.setTextColor(0, 0, 0);
+doc.setFontSize(17);
+doc.text(100,250, `NAME: ${name}`);
+    doc.text(100,290, `SCORE: ${score*10}/100`);
+    doc.text(100,330, `${name} has successfully cleared the quiz test from the`);
+    doc.text(100,370, `platform QUIZOPHILE built by TEAM Dijkstra.`);
+    doc.setTextColor(247, 126, 33);
+    doc.text(160,430, `Greetings to you and keep learning!!`);
     doc.save("certificate.pdf");
   };
 
@@ -70,7 +78,7 @@ doc.text(210,100, 'Quizophile Test Results');
     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
       SCORE OBTAINED : {score*10}/100
     </Typography>
-    {score>6 && 
+    {score>0 && 
         (
     <Buttons onClick={generatePDF} variant="contained"
         color="success"
