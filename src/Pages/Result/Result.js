@@ -42,11 +42,21 @@ const Result = ({ name, score }) => {
 
     doc.setFillColor(241,240,192);
 doc.rect(30, 30, 535, 780, 'F');
+
+doc.setFillColor(0,0,0);
+doc.rect(0, 0, 20, 840, 'F');
+doc.setFillColor(0,0,0);
+doc.rect(575, 0, 20, 840, 'F');
+doc.setFillColor(0,0,0);
+doc.rect(0, 0, 585, 20, 'F');
+doc.setFillColor(0,0,0);
+doc.rect(0, 823, 600, 20, 'F');
+
  
 doc.setFillColor(55,27,88);
-doc.rect(130, 120, 340, 40, 'F');
+doc.rect(150, 120, 300, 40, 'F');
 doc.setTextColor(247, 126, 33);
-doc.text(140,150, 'Quizophile Test Results');
+doc.text(160,150, 'Quizophile Certificate');
 doc.setTextColor(0, 0, 0);
 doc.setFontSize(17);
 doc.text(100,250, `NAME: ${name}`);
@@ -55,6 +65,15 @@ doc.text(100,250, `NAME: ${name}`);
     doc.text(100,370, `platform QUIZOPHILE built by TEAM Dijkstra.`);
     doc.setTextColor(247, 126, 33);
     doc.text(160,430, `Greetings to you and keep learning!!`);
+
+    doc.setTextColor(0, 0, 0);
+    doc.text(50,500,  `Tripda Goel`);
+    doc.text(250,500, `Simranjeet Kaur`);
+    doc.text(450,500, `Devsi Singh`);
+    doc.text(50,530, `(Team Coordinator)`);
+    doc.text(250,530, `(Team Coordinator)`);
+    doc.text(450,530, `(Team Leader)`);
+
     doc.save("certificate.pdf");
   };
 
