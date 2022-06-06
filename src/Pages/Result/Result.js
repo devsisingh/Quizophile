@@ -130,13 +130,15 @@ doc.text(100,250, `NAME: ${name}`);
       {
         score>6 && 
         (
-          <p style={{color:'green', fontSize:30, fontWeight:'bold'}}>Congratulations!! You earned a certificate for scoring more than 60%</p>
+          <p style={{color:'green', fontSize:30, fontWeight:'bold'}}>
+            Congratulations!! You earned a certificate for scoring more than 60%</p>
         )
       }
       {
         score<=6 && 
         (
-          <p style={{color:'red', fontSize:30, fontWeight:'bold'}}>Sorry!! You couldn't earn a certificate. Try again to score atleast 70%.</p>
+          <p style={{color:'red', fontSize:30, fontWeight:'bold'}}>
+          Sorry!! You couldn't earn a certificate. Try again to score atleast 70%.</p>
         )
       }
 
